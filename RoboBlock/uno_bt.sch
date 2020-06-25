@@ -1117,7 +1117,7 @@ http://www.st.com&lt;p&gt;
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="HCSR04" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="SG2" library="buzzer" library_urn="urn:adsk.eagle:library:113" deviceset="F/TMB" device="" package3d_urn="urn:adsk.eagle:package:5260/1"/>
-<part name="U1" library="adafruit_arduino" deviceset="ARDUINOR3" device="-DIMENSION"/>
+<part name="U1" library="adafruit_arduino" deviceset="ARDUINOR3" device="-BPLACE" value="ARDUINOR3-BPLACE"/>
 <part name="S1" library="adafruit_arduino" deviceset="SPST" device=""/>
 </parts>
 <sheets>

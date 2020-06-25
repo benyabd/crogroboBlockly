@@ -1093,6 +1093,59 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </deviceset>
 </devicesets>
 </library>
+<library name="adafruit_arduino">
+<packages>
+<package name="JUDCOSPST">
+<wire x1="-6.096" y1="6.096" x2="6.096" y2="6.096" width="0.127" layer="21"/>
+<wire x1="6.096" y1="6.096" x2="6.096" y2="-6.096" width="0.127" layer="21"/>
+<wire x1="6.096" y1="-6.096" x2="-6.096" y2="-6.096" width="0.127" layer="21"/>
+<wire x1="-6.096" y1="-6.096" x2="-6.096" y2="6.096" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="21"/>
+<pad name="T" x="-3.556" y="-8.128" drill="2"/>
+<pad name="P" x="3.556" y="-8.128" drill="2"/>
+<text x="-5.842" y="6.604" size="1.27" layer="25" font="vector">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="SPST">
+<wire x1="2.54" y1="-3.175" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="3.175" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.905" y2="0" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="1.905" x2="-2.54" y2="1.905" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="1.905" x2="-3.81" y2="0" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-1.905" x2="-2.54" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="0" x2="-3.81" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.905" y1="0" x2="1.27" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
+<text x="-4.445" y="-1.905" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="-1.905" y="3.175" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="P" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="S" x="2.54" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SPST" prefix="S">
+<description>Judco 50-0015-00</description>
+<gates>
+<gate name="G$1" symbol="SPST" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="JUDCOSPST">
+<connects>
+<connect gate="G$1" pin="P" pad="P"/>
+<connect gate="G$1" pin="S" pad="T"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1109,7 +1162,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="BT1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="MT1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="MT2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
-<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="DCV" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -1138,6 +1190,7 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="HCSR04" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="SG2" library="buzzer" library_urn="urn:adsk.eagle:library:113" deviceset="F/TMB" device="" package3d_urn="urn:adsk.eagle:package:5260/1"/>
+<part name="S1" library="adafruit_arduino" deviceset="SPST" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1162,15 +1215,12 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </instance>
 <instance part="MT1" gate="G$1" x="-7.62" y="78.74" smashed="yes" rot="R180"/>
 <instance part="MT2" gate="G$1" x="50.8" y="76.2" smashed="yes"/>
-<instance part="GND1" gate="1" x="40.64" y="35.56" smashed="yes">
-<attribute name="VALUE" x="38.1" y="33.02" size="1.778" layer="96"/>
-</instance>
 <instance part="P+1" gate="VCC" x="68.58" y="12.7" smashed="yes" rot="R90">
 <attribute name="VALUE" x="71.12" y="10.16" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="DCV" gate="G$1" x="134.62" y="15.24" smashed="yes"/>
-<instance part="GND2" gate="1" x="124.46" y="43.18" smashed="yes">
-<attribute name="VALUE" x="121.92" y="40.64" size="1.778" layer="96"/>
+<instance part="GND2" gate="1" x="132.08" y="38.1" smashed="yes">
+<attribute name="VALUE" x="129.54" y="35.56" size="1.778" layer="96"/>
 </instance>
 <instance part="P+2" gate="VCC" x="149.86" y="81.28" smashed="yes" rot="R90">
 <attribute name="VALUE" x="147.32" y="81.28" size="1.778" layer="96" rot="R180"/>
@@ -1256,6 +1306,10 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <attribute name="NAME" x="140.97" y="50.8" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="134.62" y="43.18" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="S1" gate="G$1" x="119.38" y="22.86" smashed="yes">
+<attribute name="NAME" x="114.935" y="20.955" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="117.475" y="26.035" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1292,46 +1346,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </segment>
 </net>
 <net name="GND" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="GND1"/>
-<wire x1="7.62" y1="73.66" x2="2.54" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="GND2"/>
-<wire x1="2.54" y1="73.66" x2="2.54" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="68.58" x2="7.62" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="68.58" x2="2.54" y2="38.1" width="0.1524" layer="91"/>
-<junction x="2.54" y="68.58"/>
-<pinref part="IC1" gate="G$1" pin="GND3"/>
-<wire x1="38.1" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="GND4"/>
-<wire x1="40.64" y1="73.66" x2="40.64" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="68.58" x2="38.1" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="68.58" x2="40.64" y2="38.1" width="0.1524" layer="91"/>
-<junction x="40.64" y="68.58"/>
-<wire x1="2.54" y1="38.1" x2="33.02" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-<junction x="40.64" y="38.1"/>
-<pinref part="BT1" gate="A" pin="3"/>
-<wire x1="33.02" y1="38.1" x2="40.64" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="15.24" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="15.24" x2="33.02" y2="38.1" width="0.1524" layer="91"/>
-<junction x="33.02" y="38.1"/>
-</segment>
-<segment>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="124.46" y1="48.26" x2="124.46" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="M1" gate="G$1" pin="GND.1"/>
-<wire x1="78.74" y1="78.74" x2="73.66" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="78.74" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="48.26" x2="124.46" y2="48.26" width="0.1524" layer="91"/>
-<junction x="124.46" y="48.26"/>
-<pinref part="M1" gate="G$1" pin="GND.2"/>
-<wire x1="116.84" y1="83.82" x2="124.46" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="83.82" x2="124.46" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="43.18" x2="129.54" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="43.18" x2="129.54" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="48.26" x2="124.46" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="SG2" gate="1" pin="-"/>
-</segment>
 <segment>
 <pinref part="HCSR04" gate="A" pin="4"/>
 <wire x1="104.14" y1="15.24" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
@@ -1381,6 +1395,42 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="GND9" gate="1" pin="GND"/>
 <pinref part="O4" gate="A" pin="1"/>
 <wire x1="180.34" y1="33.02" x2="185.42" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="BT1" gate="A" pin="3"/>
+<wire x1="78.74" y1="15.24" x2="68.58" y2="15.24" width="0.1524" layer="91"/>
+<label x="68.58" y="15.24" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="GND2"/>
+<pinref part="IC1" gate="G$1" pin="GND1"/>
+<wire x1="7.62" y1="73.66" x2="2.54" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="73.66" x2="2.54" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="68.58" x2="7.62" y2="68.58" width="0.1524" layer="91"/>
+<label x="2.54" y="71.12" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="GND3"/>
+<wire x1="38.1" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="GND4"/>
+<wire x1="40.64" y1="73.66" x2="40.64" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="68.58" x2="38.1" y2="68.58" width="0.1524" layer="91"/>
+<label x="40.64" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="M1" gate="G$1" pin="GND.1"/>
+<wire x1="78.74" y1="78.74" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
+<label x="76.2" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="M1" gate="G$1" pin="GND.2"/>
+<wire x1="116.84" y1="83.82" x2="124.46" y2="83.82" width="0.1524" layer="91"/>
+<label x="124.46" y="83.82" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SG2" gate="1" pin="-"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="132.08" y1="40.64" x2="132.08" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -1638,20 +1688,26 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="IC1" gate="G$1" pin="VCC2"/>
 <wire x1="7.62" y1="53.34" x2="7.62" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="43.18" x2="60.96" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="DCV" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="17.78" x2="121.92" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="M1" gate="G$1" pin="VIN"/>
-<wire x1="121.92" y1="17.78" x2="121.92" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="86.36" x2="116.84" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="88.9" x2="60.96" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="88.9" x2="68.58" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="88.9" x2="68.58" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="99.06" x2="121.92" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="99.06" x2="121.92" y2="86.36" width="0.1524" layer="91"/>
-<junction x="121.92" y="86.36"/>
 <pinref part="IC1" gate="G$1" pin="VCC1"/>
 <wire x1="60.96" y1="43.18" x2="60.96" y2="88.9" width="0.1524" layer="91"/>
 <junction x="60.96" y="88.9"/>
+<pinref part="S1" gate="G$1" pin="S"/>
+<wire x1="121.92" y1="27.94" x2="121.92" y2="86.36" width="0.1524" layer="91"/>
+<junction x="121.92" y="86.36"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="DCV" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="17.78" x2="121.92" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="S1" gate="G$1" pin="P"/>
 </segment>
 </net>
 </nets>
